@@ -1,14 +1,71 @@
-<!DOCTYPE html>
- <!--DOCTYPE indica la vercion que se esta usando-->
- <html lang="es">
-   <!-- indica el idioma que se esta usando-->
-   <head>
-      <!-- <head> "cabeza" de la extructura --> 
-      title>Curso JS-Dom</title>
-   </head> 
-   <body>
-     <!-- El elemento <body> representa el contenido de un documento HTML.-->
-     <h1>JavaScript</h1>
-     <p>Hola FreeCodeCamp</p>
-    </body>
- </html> 
+<!DOCTYPE html> <!--DOCTYPE indica la vercion que se esta usando-->
+<html lang="es"> <!-- indica el idioma que se esta usando-->
+  <head>
+    <!-- <head> "cabeza" de la extructura --> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Curso JS-Dom</title>
+  </head> 
+  <body>
+    <!-- El elemento <body> representa el contenido de un documento HTML.-->
+    <h1>-Curso-JavaScript-DOM-</h1>
+    <p>
+			Que es el DOM? Ese es el modelo que vamos a usar durante el curso y esta estrechamente 
+			relacionado con el desarrollo web, nos va a permitir crear páginas interactivas que necesitamos. 
+			Cuando se crea una página web normalmente se crea un archivo HTML para definir la estructura de 
+			la página. Esa estructura en el navegador  está representada también por una jerarquía. 
+			Un elemento está dentro de otro elemento y esos elementos se van a poder representar como ciertos  
+			obj en nuestro programa. Toda esa jerarquía de distintos elementos que se van agrupar y estructurar 
+			para poder mostrarlos en el navegador es lo que conocemos como DOM pero se va creando en base 
+			a lo que definimos en el archivo HTML. El navegador crea una representación de c/u de esos 
+			elementos y su ubicación en una jerarquía especifica. El significado de DOM→Modelo de Objetos 
+			del Documento. Formal mente podemos definir el DOM como la representación de los obj, 
+			los distintos elementos que conforman la estructura de un documento en la web.
+			A partir de estos elementos podemos generar un diagrama similar a este que representa su 
+			jerarquía HTMT
+    </p>
+    <figure>
+      <img src="C:\Users\M\Pictures\Camera Roll\JS-DOM1.jpg" alt="Imajen de estructura html y diagrama" width="350" height="200"> 
+      <!--idth="75"-->
+    </figure>
+		<p>
+			En el grafico vemos al inicio la etiqueta html que es el elemento raíz a partir de ahí continúan 
+			todos los otros elementos que van hacer descendientes del elemento principal. 
+			Luego tenemos head y body que están en la misma línea, esto nos dice que son hermanos porque están 
+			ubicados en el mismo nivel en la jerarquía. Seguidamente dentro de head encontramos el elemento title y por 
+			debajo tenemos otro nivel que representa el texto en sí. El DOM llega hasta ese ínfimo detalle de representar 
+			el texto de forma individual. Con body ocurre lo mismo, pero en este caso body contiene dos elementos. 
+			Un elemento h1 y un elemento p están al mismo nivel en la jerarquía pero están contenidos en el elemento 
+			body y así se puede ir leyendo este diagrama hasta que llegamos al texto que corresponde a cada uno si es que 
+			contienen textos. Por ejemplo si tenemos un elemento de imagen no tendríamos texto, esto es básicamente la idea 
+			del diagrama. ¿Porque es importante representar el documento a través del DOM? Representar el documento HTML a 
+			través del DOM nos permite acceder a sus elementos en nuestro programa usando JS y también manipularlos que 
+			significa crear elementos nuevos, eliminar elementos que ya están en la página, modificar sus atributos, agregar 
+			atributos nuevos, cambiar el texto. Todas esas operaciones mencionadas son ejemplos de cómo podemos manipular 
+			elementos una vez que ya están representadas en el DOM en el navegador. Es uno de los aspectos más importante que 
+			se tiene que saber. El DOM nos permite representar los elementos como NODOS y OBJETOS con los cuales podemos trabajar 
+			JS con sus propiedades, métodos y con distintos elementos.  Por ej. cuando se hace clik sobre un botón todos esos 
+			eventos vamos a poder manejarlos y detectarlos en nuestro código gracias al DOM porque en si nuestro archivo HTML es 
+			solo eso un archivo pero el DOM es el que le da esa capacidad poderosa para poder trabajar con esos elementos en JS. 
+			hay que recordar estos dos conceptos NODO y OBJETOS son muy importantes para el DOM los Nodos son muy utilizados y 
+			prácticamente fundamentales en el área de estructuras de datos. También en el DOM vamos a tener Nodos pero esos Nodos 
+			en lugar de representar información como tal van a representar elementos con todos sus datos y toda esa información 
+			y los objetos van a estar presente cuando trabajemos con esos elementos en JS, van a tener propiedades y métodos. 
+      Un Nodo es un punto específico del diagrama o del árbol de Nodos del DOM por ejemplo en el siguiente grafico 
+			tenemos la estructura del archivo HTML y el mismo diagrama anterior pero ves que todos tienen un borde amarillo es 
+			para indicarles que todos estos  elementos son Nodos incluyendo el texto. Individualmente el texto en el DOM se 
+			representa como un Nodo y eso va ser importante cuando trabajemos con algunos métodos que nos puede permitir acceder 
+			a un elemento o a un Nodo como tal. Los Nodos en el DOM incluyen:El documento en sí, los elementos HTML que definamos 
+			en nuestro archivo, también cualquier texto que incluyas entre etiquetas se representa como un Nodo y también algo 
+			importante es que los comentarios que escribas en el archivo html también se representan como Nodos. Todo el proceso 
+			de transformar un archivo html a un DOM interactivo que podemos usar en nuestro archivo JS lo realiza el navegador 
+			o borwser en inglés.
+		</p>
+		<figure>
+			<img src="C:\Users\M\Pictures\Camera Roll\JS-DOM2.jpg" alt="Imajen de estructura html y diagrama" width="350" height="200"> 
+			<!--idth="75"-->
+		</figure>
+  </body>
+</html> 
+        
