@@ -10,6 +10,14 @@
   <body>
         <!-- El elemento <body> representa el contenido de un documento HTML.-->
 		<h1>-Curso-JavaScript-DOM-</h1>
+		<!--Enlases a secciones internas-->
+		<a href="#parrafo-1">Que es el DOM</a>
+		<a href="#parrafo-2">Conceptos Importantes</a>
+		<a href="#parrafo-3">Jerarquia mas elaboradas</a>
+		<a href="#parrafo-4">Nodos Vs. Elementos</a>
+		<a href="#parrafo-5">Herramientas de Desarrollo de chrome</a>
+    <a href="#parrafo-6">Nodos que no son tal</a>
+		<h3 id="parrafo-1">Que es el DOM?</h3>
 		<p>
 		Que es el DOM? Ese es el modelo que vamos a usar durante el curso y esta estrechamente 
 		relacionado con el desarrollo web, nos va a permitir crear páginas interactivas que necesitamos. 
@@ -66,6 +74,7 @@
 			<!--idth="75"-->
 			<img src="https://imgur.com/HwLxz0F.jpg" alt="Imajen de estructura html y diagrama" width="350" height="200"> 
 		</figure>
+		<h3 id="parrafo-2">Conceptos Importantes</h3>
 	  <p>
 		Conceptos Importantes:
 		Al referirte al DOM y a los elementos representados en el dom dentro de su jerarquía, al igual que un árbol genealógico 
@@ -77,6 +86,7 @@
 			<!--idth="75"-->
 			<img src="https://imgur.com/Dd8Uffr.jpg" alt="Imajen de estructura html y diagrama" width="350" height="200"> 
 		</figure>
+		
 		<P>
 		Por ejemplo como vemos en el diagrama lo primero que conseguimos en nuestra jerarquía en html es el Nodo raíz es el que 
 		contiene a todos los otros elementos. Luego comenzamos hablar sobre las distintas relaciones que puede haber. Primero tenemos 
@@ -86,6 +96,7 @@
 		<figure>
 		<img src="https://imgur.com/wkCOxnP.jpg" alt="Imajen de estructura html y diagrama" width="350" height="200"> 
 		</figure>
+		
 		<p>
 		En el gráfico de arriba tenemos señalado el elemento head ese nodo es el nodo padre de title porque esta contenido por head lo 
 		mismo ocurre con body es el nodo padre de h1 y de p. Eso también nos lleva a que tenemos otra relación reciproca si un Nodo es 
@@ -95,7 +106,8 @@
 		<figure>
 			<img src="https://imgur.com/qaQRzL2.jpg" alt="Imajen de estructura html y diagrama" width="350" height="200"> 
 		</figure>
-		<p>
+		<h3 id="parrafo-3">Jerarquia mas elaboradas</h3>
+    <p>
 		Ahora que ocurre si la jerarquía es más elaborada como indica el siguiente grafico. Digamos que como muestra el grafico anterior 
 		body contiene a h1 y p y en lugar de eso como vemos en el siguiente grafico en lugar de h1 tenemos un div y dentro de ese div tenemos 
 		un h1 y un a, en ese caso ya sería relevante el concepto de Nodo descendiente. Al igual que una familia tendrías a tu tátara abuelo 
@@ -112,7 +124,8 @@
 	  </p>
 		<figure>
 			<img src="https://i.imgur.com/LUHKDZg.jpg" alt="Imajen de estructura html y diagrama" width="350" height="200"> 
-		</figure
+    </figure>
+    <h3 id="parrafo-4">Nodos Vs. Elementos</h3>
 		<p>
 		NODOS Vs. ELEMENTOS
 		El concepto de Nodo es más amplio que el concepto de Elementos en el DOM, es importante saber cuál es la diferencia entre ambos. 
@@ -125,6 +138,7 @@
 		tengan una función como tal en la estructura de la página web si son tomados en cuenta al momento de crear el DOM y crean nuevos nodos en el 
 		DOM por eso es la diferencia. El Nodo es un concepto más amplio que el Elemento
 	  </p>
+    <h3 id="parrafo-5">Herramientas de Desarrollo de chrome</h3>
 		<p>	
     Herramientas de Desarrollo de chrome
     Veamos cómo usar las herramientas de google chrome con la cual vamos a trabajar en el curso, en estas herramientas vamos a poder visualizar 
@@ -145,7 +159,24 @@
     y a mediada que nos internamos podemos ver cómo se va construyendo esa estructura del DOM y también dentro de estos elementos tenemos textos.
     Además de esto como estamos usando la extensión live server para actualizar nuestros cambios en vivo vemos los elementos de comentarios que 
     ha sido agregado por esa extensión esto nos dice que si son parte del DOM si se reflejan en las herramientas de chrome.
-    CAMBIAR EL DOM: 
-    </p>	
+    CAMBIAR EL DOM:
+    En las herramientas de Chrome podemos hacer cambios, si haces doble click en el texto de algún a los elemento puedes modificarlo y esto en 
+    realidad no es html es una versión interactiva del DOM puedes confirmarlo si haces click derecho se despliega un menú de opciones que nos 
+    permite editar el elemento como si fuera html. Veamos la de diferencia de editar texto o como html se recuerda que el texto se representa de 
+    forma individual como un Nodo separado del elemento como tal. Si editamos el texto automáticamente nos selecciona el texto y podemos modificarlo 
+    pero si seleccionamos editar como html nos selecciona todo el elemento, todo el nodo del Dom incluyendo el texto que contiene. h1-texto-h1 y 
+    te permite modificar no solo el texto si no también la etiqueta en vez de h1 puedes llevarlo al valor que desees h2, h3, etc. Todo eso va a ser 
+    temporal, los cambios que hagas en las herramientas de chrome son temporales hasta que vuelvas a cargar la página. Es muy útil para tener una 
+    vista previa de modificaciones que planeamos hacer en la página web. También podemos seleccionar o inspeccionar algún elemento en especial.
+    En el vértice superior izquierdo veremos una flechita tipo puntero que si hacemos click al seleccionarla se pondrá de color azul. El cursor se 
+    va a tornar como un cursor especial que nos va a permitir seleccionar un elemento en la página para inspeccionarlos y se podrá apreciar como el 
+    elemento o el nodo correspondiente en el DOM se va resaltando, eso es muy útil cuando ya tienes una página más elaborada y quieres inspeccionar 
+    algún elemento especifico. También tenemos otras herramientas interactivas como por ejemplo una consola donde se puede ejecutar código de JS 
+    para ver distintos resultados o para interactuar con los distintos elementos. 
+  </p>
+  <h3 id="parrafo-6">Nodos que no son tal</h3>
+  <p>
+  Nodos que no son elementos:
+  </p>	
 	</body>
 </html> 

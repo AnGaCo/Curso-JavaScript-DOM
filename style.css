@@ -1,0 +1,33 @@
+/* Celectores Css*/
+/* Celector universal * 
+   * {
+      color: color;
+   }  */  
+/*Celector de tipo */
+h1
+  {
+    color: blue;
+    font-size: 50px;
+    font-family: "Roboto", sans-serif;
+    font-family: "Dancing Script", "cursive";
+  }
+
+h2 
+  {
+    color: blue;
+    font-size: 30px;
+    font-family: "Roboto", sans-serif;
+  }
+
+h3
+  {
+    color: rgb(26, 128, 0);
+    font-size: 30px; 
+  }
+
+p {
+    color: purple;
+    font-size: 25px;
+  }
+
+      
