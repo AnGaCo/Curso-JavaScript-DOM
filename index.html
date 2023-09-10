@@ -114,10 +114,38 @@
 			<img src="https://i.imgur.com/LUHKDZg.jpg" alt="Imajen de estructura html y diagrama" width="350" height="200"> 
 		</figure
 		<p>
-			NODOS Vs. ELEMENTOS
-			El concepto de Nodo es más amplio que el concepto de Elementos en el DOM, es importante saber cuál es la diferencia entre ambos. 
-			Estos conceptos son fáciles de intercambiar y es fácil confundirse entre un Nodo y un Elemento cuando ya estamos trabajando en el contexto 
-			del DOM
-		</p>	
+		NODOS Vs. ELEMENTOS
+		El concepto de Nodo es más amplio que el concepto de Elementos en el DOM, es importante saber cuál es la diferencia entre ambos. 
+		Estos conceptos son fáciles de intercambiar y es fácil confundirse entre un Nodo y un Elemento cuando ya estamos trabajando en el contexto 
+		del DOM. Un Nodo puede contener más tipo de información que los Elementos. Usualmente nos referimos a los Elementos del documento HTML como 
+		“elementos” es decir toda esa estructura que escribimos en el archivo html una vez que ya se traduce al DOM nos vamos a referir a ellos como 
+		elementos. Pero un Nodo puede ser un documento HTML puede representar o ser texto o comentarios que hayas escrito en el documento. 
+		Asique el Nodo como tal no solamente representa esas etiquetas html o los elementos como tal, también incluye el texto que es un Nodo aparte 
+		para cada uno de esos elementos que contengan texto o también pueden ser comentarios que hayas escrito en el documento html que aunque no 
+		tengan una función como tal en la estructura de la página web si son tomados en cuenta al momento de crear el DOM y crean nuevos nodos en el 
+		DOM por eso es la diferencia. El Nodo es un concepto más amplio que el Elemento
+	  </p>
+		<p>	
+    Herramientas de Desarrollo de chrome
+    Veamos cómo usar las herramientas de google chrome con la cual vamos a trabajar en el curso, en estas herramientas vamos a poder visualizar 
+    el DOM la estructura en el archivo html con todos su nodos. Primero que nada en VSC instalamos la extensión live server y puedes ver que se 
+    nos abre el archivo HTML en nuestro borwser,  en la barra superior aparece un elemento, un número (http://127.0.0.1:5500/index.html) 
+    Estos números 127.0.0.1 representan una dirección IP local a continuación de los dos puntos 5500 representa el puerto que es como un código 
+    para identificar un proceso específico dentro del servidor local, es como una ubicación y es único para ese proceso y luego vemos donde 
+    estamos ubicados→ /index.html ¡si en el proyecto! En el archivo que está abierto en VSC  que también nos avisa que el servidor se abrió en el 
+    puerto 5500. Y si necesitas volver a entrar a esa página puedes escribir la URL que se describe más arriba en azul. 
+    Esa es la parte fundamental de live server y luego si quieres detener el servidor haces clik en la barra inferior de VSC en port 5500 y eso 
+    lo detiene. Ahora vamos a ver cómo acceder al DOM con las herramientas de desarrollo de chrome. Hacemos clik derecho en cualquier lugar de la 
+    página web se abre un menú y hacemos click en inspeccionar en la parte derecha por defecto se abre una ventana de herramientas. En el menú 
+    aparece por defecto una pestaña ELEMENTOS esa pestaña es la que se necesita para poder visualizar el DOM allí vamos a ver toda la estructura 
+    del archivo html como el DOM y su jerarquía o sea que ya estamos dentro de las herramientas de desarrollo de chrome. Esta es la representación 
+    en el borwser del DOM que es nos que interesa. Se puede ver toda la estructura html pero con algo interactivo agregado. Si posamos el cursor en 
+    html veremos que se resalta todo el documento. Ese es el NODO padre, dentro de html vemos head pero este no es visible como tal en la estructura 
+    asique si lo seleccionamos no lo podemos encontrar pero está allí y existe y luego aquí vemos en body lo que si podemos observar en la página 
+    y a mediada que nos internamos podemos ver cómo se va construyendo esa estructura del DOM y también dentro de estos elementos tenemos textos.
+    Además de esto como estamos usando la extensión live server para actualizar nuestros cambios en vivo vemos los elementos de comentarios que 
+    ha sido agregado por esa extensión esto nos dice que si son parte del DOM si se reflejan en las herramientas de chrome.
+    CAMBIAR EL DOM: 
+    </p>	
 	</body>
 </html> 
