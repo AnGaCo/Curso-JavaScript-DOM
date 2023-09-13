@@ -1,0 +1,23 @@
+/* Estilos generales Css*/
+/* Con el selector universal vamos asignar por defecto un margin: 0; y padding: 0; esto se recomienda y lo vas a 
+ver comúnmente para que ningún elemento tenga un margin o padding asignado por defecto en el Browser pero cuando 
+iniciamos esto de la forma mencionada estamos reseteando todo eso. También vas a encontrar esta propiedad 
+box-sizing: border-box; esto le dice al Browser como va a calcular el tamaño en base a su margin y a su padding, 
+border-box es una de las propiedades específicas de los valores específicos. Y luego el tipo de fuente 
+font-family: "lato", sans-serif;
+*/ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "lato", sans-serif; 
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: url(imagenes/pizza.jpg) no-repeat center center/cover;
+}
