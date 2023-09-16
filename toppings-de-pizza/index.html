@@ -1,3 +1,17 @@
+<!--
+Vincular JavaScript a HTML
+Vamos a comenzar a usar JS para acceder a los elementos de este DOM, para eso vamos a tener que conectar 
+el archivo html con el de JavaScript. Nos dirigimos al final de la etiqueta body pero dentro de body vamos 
+a especificar donde se encuentra  el archivo.JS. Como esta en la misma carpeta y al mismo nivel simplemente 
+escribimos el nombre del archivo.js y ya eso nos va a permitir que el elemento script importe es archivo de 
+JS y lo vincule con html de modo tal que lo podremos usar en nuestra página web. 
+Ya tenemos la estructura y el maquetado y podemos ver como se adapta a nuestros dispositivos. 
+Otra herramienta muy útil de Desarrollo de Chrom en el vértice superior izquierdo veremos una flechita tipo 
+puntero, justo al lado hay otro icono que es cómo una tableta y un teléfono si hacemos click ahí al seleccionarla 
+se pondrá de color azul y vamos a entrar en el modo de vista previa responsiva si arrastras con el cursor 
+estos indicadores puedes simular estar en un dispositivo de un ancho diferente y podrás apreciar cómo se 
+ajustan los elementos.-->
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -11,11 +25,12 @@
     <div id="contenedor">
       <h1 id="titulo">🍕<br>Toppings de Pizza</h1>
       <ul id="lista-toppings">
-      <li class="Toppings fondo-marron" id="aceitunas">Aceitunas</li>
-      <li class="Toppings fondo-naranja">Cebolla</li>
-      <li class="Toppings fondo-marron" id="albahaca">Albahaca</li>
-      <li class="Toppings fondo-naranja">Champiñones</li> 
+        <li class="Toppings fondo-marron" id="aceitunas">Aceitunas</li><br>
+        <li class="Toppings fondo-naranja">Cebolla</li><br>
+        <li class="Toppings fondo-marron" id="albahaca">Albahaca</li><br>
+        <li class="Toppings fondo-naranja">Champiñones</li> 
       </ul>  
     </div>
+    <script src="app.js"></script>
   </body>
 </html>
