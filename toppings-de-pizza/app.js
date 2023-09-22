@@ -91,4 +91,59 @@ console.log(toppings[0].id);
 
 /*
 .getElementsByTagName ()
-*/                    
+Digamos que en lugar de seleccionar en base a una clase específica quiero seleccionar todos los elementos li en mi página 
+web de mi documento, como hacemos eso? No necesariamente tengo que asignarle la misma clase si no lo necesito. Si quiero 
+seleccionarlos  todos puedo usar el método→.getElementsByTagName() “tag es etiqueta en español” es muy similar al 
+método→.getElementsByClassName pero en este caso la búsqueda va a ser más general vamos a seleccionarlo en base al nombre de 
+su etiqueta html. La etiqueta debe ir entre comillas. 
+Veamos el código→const misToppings = document.getElementsByTagName("li"); y en la herramienta  de chrom en consola puedes 
+ver la colección con 4 elementos. De la misma forma que lo seleccionamos anteriormente con la clase ahora la estamos 
+seleccionando de una forma más general, todos los elementos de ese tipo se van a seleccionar sin importar si tienen alguna 
+clase o li especifico, es importante saber que si tenemos otra lista con elementos li también se seleccionarían esos 
+elemento. Veamos la diferencia de esto si quisiera seleccionar todos los elementos con la clase fondo marrón.
+Vemos el codigo→const toppingFondoMarron = document.getElementsByClassName("fondo-marron"); pasamos el nombre de la clase 
+en lugar de la etiqueta y en la herramienta  de chrom en consola puedes ver la colección con 2 elementos seleccionados a 
+partir del DOM. También puedes seleccionar elementos en base a los elementos que cumplan un selector Css específico. 
+*/ 
+const misToppings = document.getElementsByTagName("li");
+console.log(misToppings);
+const toppingFondoMarron = document.getElementsByClassName("fondo-marron");                  
+console.log(toppingFondoMarron);
+
+/*
+.querySelector()
+¿Cómo podemos seleccionar un elemento que cumpla el criterio de un selector Css? Tenemos dos métodos diferentes, 
+.querySelector() nos permite seleccionar el primer elemento que cumple ese criterio y .querySelectorAll() nos permite 
+seleccionar todos los que cumplan ese criterio. Estos métodos son útiles cuando necesitamos un proceso de selección un 
+poco más específico es como cuando escribes tus selectores en Css tienes por ejemplo puedes combinar id, class en 
+distintos estados también por ejemplo activos o enfocado, esas variaciones más poderosas la de los selectores Css las 
+puedes usar con el método .querySelector(). En cambio los métodos que aviamos visto hasta el momento habían sido más 
+generales. Veamos cómo puedes usar este método. Vamos a seleccionar este método con el #→id aceitunas usando este 
+método que toma como argumento una cadena de caracteres con el selector Css que quieres usar. En este caso como queremos 
+encontrar un id el primer elemento con ese id escribimos ("#aceitunas") como vemos en el codigo→
+const aceitunas = document.querySelector("#aceitunas"); y en la herramienta  de chrom consola mostramos el resultado 
+vemos ese primer elemento del DOM que corresponde a aceitunas que tiene ese id eso es uy útil porque también podemos 
+trabajar con sus propiedades y métodos. También podemos usar este método para seleccionar una class  específica en el 
+DOM en esa jerarquía (".toppings") seria aceitunas y si efectivamente vemos en consola aceitunas. ¿Que nos retorna 
+este método? veamos con typeof  vemos en consola que su retorno es un object con el cual podemos trabajar en JS.
+*/                   
+const aceitunas = document.querySelector("#aceitunas");
+console.log(aceitunas);
+const aceituna = document.querySelector(".toppings");
+console.log(aceituna);
+console.log(typeof aceituna); /*return an object */
+
+/*
+Pero hasta el momento todo parece similar con lo que aviamos hecho anteriormente con los otros métodos, el poder de 
+este método es que podemos combinar distintos criterios para el selector. Por ejemplo si necesitamos escoger un elemento 
+que tenga dos class o con algún id especifico podemos hacer esas combinaciones para obtener lo que necesitamos. 
+Digamos que queremos obtener el primer elemento que tenga la clase .toppings y la clase .fondo-naranja, eso es algo que 
+no aviamos podido hacer anteriormente. 
+pero con el codigo→const primerToppingsNaranja = document.querySelector(".toppings.fondo-naranja"); vemos que el resultado 
+es cebolla porque puedes ver que en realidad efectivamente si es el primer elemento del DOM que tiene la clase 
+toppings como la clase fondo-naranja y con typeof vemos que retorna object. 
+Veamos otro ejemplo.                
+*/  
+const primerToppingsNaranja = document.querySelector(".toppings.fondo-naranja");
+console.log(primerToppingsNaranja);
+console.log(typeof primerToppingsNaranja);
