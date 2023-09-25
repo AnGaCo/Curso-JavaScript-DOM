@@ -142,8 +142,66 @@ no aviamos podido hacer anteriormente.
 pero con el codigo→const primerToppingsNaranja = document.querySelector(".toppings.fondo-naranja"); vemos que el resultado 
 es cebolla porque puedes ver que en realidad efectivamente si es el primer elemento del DOM que tiene la clase 
 toppings como la clase fondo-naranja y con typeof vemos que retorna object. 
-Veamos otro ejemplo.                
 */  
 const primerToppingsNaranja = document.querySelector(".toppings.fondo-naranja");
 console.log(primerToppingsNaranja);
 console.log(typeof primerToppingsNaranja);
+
+/*
+Veamos otro ejemplo: Una forma equivalente a seleccionar el primer toopings con fondo naranja para este caso sería con 
+un selector más elaborado que tenga la etiqueta→ul dentro de una lista no ordenada que sea de tipo li y que tengan la 
+clase .fondo-naranja. Aquí si vemos el contenido que nos retorna el método.
+const primerToppingsNaranja = document.querySelector(".toppings.fondo-naranja"); toppings fondo-naranja, ya esto es un 
+ejemplo más elaborado del tipo de selector que puedas escribir para encontrar elementos con el método .querySelector() 
+que es muy útil.  
+*/
+const ToppingsNaranja = document.querySelector("ul li.fondo-naranja");
+console.log(ToppingsNaranja);
+
+/*
+Y por último veremos otro ejemplo para mostrar cómo puede ser elaborado. Digamos que queremos seleccionar el primer 
+elemento, el primer toppings que no sea marrón el primer toppings que no tenga la clase fondo-marron. 
+Esto te debería resultar interesante es como un operador en Css que nos permite descartar los elementos que tengan esa 
+clase, esa característica. 
+Con este codigo→const primerToppingsNoMarron = document.querySelector("ul li:not(fondo-marron)"); vamos a mostrar en 
+consola y vemos el primer toppings que no tiene fondo-marron que es cebolla, así que puedes ver las variaciones que 
+podemos usar para seleccionar exactamente lo mismo pero debemos saber cómo personalizar el selector para que cumpla 
+exactamente lo que necesitamos para nuestra página web. En este caso estamos seleccionado el primer elemento que 
+cumpla ese criterio que fuera seleccionado con este selector ("ul li:not(fondo-marron)"); 
+Pero veamos qué es lo que ocurre con el método .querySelectorAll() que es una variación y lo veremos a continuacion.       
+*/
+const primerToppingNoMarron = document.querySelector("ul li:not(.fondo-marron)");
+console.log(primerToppingNoMarron);
+
+/*
+.querySelectorAll();
+Y finalmente el cuarto método que vamos a ver para seleccionar los elementos del DOM es .querySelectorAll() veamos un 
+ejemplos con los toppings de fondo naranja, es muy similar a.querySelector() y vamos a pasar como argumento un selector 
+Css como una cadena de caracteres, pero en este caso como le estamos agregando la palabra All tenemos un método diferente 
+que nos va a retornar una colección html como un arreglo con todos los elementos que cumplen ese criterio por ejemplo 
+los elementos de la clase toppings y fondo-naranja veamos qué es lo que ocurre, usando la herramienta de chrom consola 
+mostramos el resultado. En este caso tenemos algo diferente, tenemos una lista de Nodos que es diferente a una colección 
+html Nodelist y tiene 2 elementos a los cuales podemos acceder con sus índices respectivos [0][1] además esa lista de 
+Nodos tiene un tamaño→length además la lista de Nodos se considera un objeto en JS, el método retorna un objeto, puedes 
+usar notación de punto para obtener sus propiedades y trabajar con sus métodos. Recuerda los 4 elementos básicos para 
+seleccionar elementos del DOM son:
+.getElementById();
+.getElementsByClassName();
+.querySelector();
+.querySelectorAll();
+Los métodos .querySelector(); y .querySelectorAll(); son más amplios son, más poderosos pero normalmente tratamos de 
+usar los que son más específicos como .getElementById(); .getElementsByClassName(); depende de lo que necesites usar y 
+también debes tener en cuenta el efecto que puede tener usarlos sobre el desempeño o la eficiencia de tu página 
+web o de tu aplicación.
+*/
+const ToppingNaranja = document.querySelectorAll(".toppings.fondo-naranja");
+console.log(ToppingNaranja);
+console.log(ToppingNaranja[0]);/*return cebollas */
+console.log(ToppingNaranja[1]);/*return champiñones */
+console.log(ToppingNaranja.length); /*El metodo return 2 elementos */
+console.log(typeof ToppingNaranja); /*return an objct*/
+
+/*
+Asignar Estilos:
+
+*/
