@@ -30,7 +30,6 @@ cadena de caracteres y lo puedes ver con console.log(typeof contenedor.innerHTML
 const contenedor = document.getElementById("contenedor");
 console.log(typeof contenedor); /*return an object */
 console.log(contenedor.innerHTML); 
-
 /*
 En este caso estábamos trabajando con un contenedor, veamos qué ocurre si intentamos seleccionar un elemento como por 
 ejemplo el título, el elemento h1. Veamos que obtenemos, si vamos a las herramientas de desarrollo de chrome aquí vemos 
@@ -203,5 +202,82 @@ console.log(typeof ToppingNaranja); /*return an objct*/
 
 /*
 Asignar Estilos:
-
+En este capítulo veremos cómo puedes personalizar estilos de un elemento con JS, eso es muy útil en caso si quieres cambiar el 
+estilo o el valor de alguna propiedad Css en base a como el usuario a interactuado con la página web. Por ejemplo si hace click 
+en un botón otro elemento puede estar afectado o si alguna operación se completa puedes querer mostrar algún elemento o esconderlo, 
+depende de lo que necesites porque esto es muy versátil. Comencemos lo aprendido en la sección anterior como seleccionar un elemento, 
+vamos a continuar con nuestros toppings como queremos solamente obtener nuestro primer topping de la lista vamos a usar el método 
+.querySelector(); y vamos a encontrar ese primer elemento con la clase .toppings. Para confirmar que tenemos acceso a ese elemento, 
+vamos a mostrar en consola y vemos el primer topping aceitunas. Una vez que ya tenemos ese elemento podemos asignar un estilo usando 
+notación de punto. Todos los elementos que selecciones van a tener una propiedad llamada style, mostremos esa propiedad en la consola 
+para ver el estilo actual de ese elemento veremos el contenido de ese estilo. Es una declaración de estilo Css “cssstyledeclaration” 
+expandiendo ▼ en la consola podemos ver todas las propiedades css que normalmente podemos asignarle a un elemento. Todas esas propiedades 
+que podemos asignarle en el archivo styles.css también podemos personalizarla en JS. Algo importante para tener en cuenta es que en css 
+esos nombre cuando tienen más de una palabra lo separamos con un guion pero en JS vamos a seguir la convención de nomenclatura que usamos 
+con las variables y las funciones →camelCase  hay que recordar que son objetos y usando notación de punto puedes acceder a sus propiedades y 
+atributos. Vamos a personalizar  este topings, básicamente es como asignarle un valor a una variable. Primero seleccionamos el estilo de ese 
+elemento→ primerTopping.style y luego usando notación de punto especificamos cuál de esas propiedades queremos personalizar en este caso es 
+color de fondo→ .backgroundColor = "blue"; y veamos qué es lo que ocurre, usando la herramienta  de chrom consola mostramos el resultado. 
+El primer topping Aceitunas su color es de fondo azul se cambió el estilo con JS. Si cambiamos a la pestaña Elements en las herramienta de 
+Chrome seleccionamos el icono superior izquierdo que permite que el cursor seleccione el elemento deseado en este caso el primer elemento de la 
+clase .topping puedes notar que si revisas el DOM vas a encontrar un estyle en línea que se le asignó a ese elemento en específico, le agrega un 
+atributo estyle a ese elemento y agrega esa propiedad Css con el valor que corresponde y vemos también como JS sabe automáticamente como transformar 
+esa propiedad en la notación que normalmente usamos en Css con un guion para separar las palabras style = “background-color: blue;” y culmina esa 
+línea con un punto y coma como hacemos en Css asique ese estilo va a tener la mayor prioridad porque es un estilo en línea. No es un estilo 
+asignado a través de una clase o de un id. A continuación vamos a personalizar el estilo del color de letra usando color hexadecimal como lo harías 
+normalmente en Css .style.color = "#6dff00"; y veamos qué es lo que ocurre, usando la herramienta  de chrom consola, efectivamente vemos el color de 
+la letra como un verde neón y el fondo es azul. Puedes ver que ese estilo se agregó a la lista de style en línea para ese elemento, si bien en JS lo 
+especificamos como hexadecimal pero automáticamente se transformó en un modelo RGB. También otro ejemplo interesante es que podemos transformar el 
+texto a mayúscula. .style.textTransform = "uppercase"; igual que lo haríamos con una propiedad en Css. Puedes ver que ese estilo se agregó a la 
+lista de style en línea para ese elemento y recuerda que ese estilo va a tener la mayor prioridad porque es un estilo en línea. Una vez que ya 
+obtuvimos del DOM el nombre del elemento, en este caso→ primerTopping puedes usar el mismo formato o misma sintaxis→primerTopping.style. seguido del 
+nombre de cualquier propiedad que puedas personalizar. console.log(primerTopping.style); Si espandimos ▼ return muestra todas las propiedades 
 */
+const primerTopping = document.querySelector(".toppings");
+console.log(primerTopping);
+console.log(primerTopping.style); /*Si espandimos ▼ return muestra todas las propiedades*/
+primerTopping.style.backgroundColor = "blue";/*return fondo azul*/
+primerTopping.style.color = "#6dff00";/*return letra verde neon*/ 
+primerTopping.style.textTransform = "uppercase";/*return texto en mayuscula*/
+
+/*
+Textos en el DOM:
+Formas y alternativas de acceder al contenido interno de un elemento que contiene texto. Primero que todo cualquier operación realizada con el DOM 
+debemos obtener ese elemento usando uno de los métodos que vimos en anteriores capítulos. En este caso vamos a seleccionar la lista-toppings, la 
+lista como tal el elemento ul con el método .getElementById(); vamos a obtener esa lista con su id→("lista-toppings") lo mostramos en la consola 
+para ver que tenemos acceso a esa lista. Efectivamente tenemos la lista de toppings con sus 4 elementos interno, esa lista también contiene Nodos 
+específicos para el texto y hay varias formas para acceder a ese texto en caso que necesites usarlo en el programa o modificarlo. El primero es 
+.innerText. (Acotación: Texto interno). Vemos en consola el resultado ACEITUNAS, Cebolla, Albahaca, Champiñones. Si vemos la descripción nos dice 
+que retorna una cadena de caracteres. Ahora veamos el resultado con .textContente que puede ser similar a .innerText y vamos a mostrar el nombre de 
+las propiedades para diferenciarlas solo para fines visuales. Vemos en consola que .innerText nos retorna cadenas de caracteres en el orden en que 
+se encuentran en el archivo html. En contraste .tectContent aparece en forma similar pero incluye los espacios que tenía ese texto en el archivo html
+si vemos el archivo html puedes ver que el texto de los títulos esta indentado. Este texto que muestra .textContent no está al mismo nivel que el 
+elemento html principal, en el archivo index.html contamos 8 espacio de indentación para ese elemento li exactamente los mismos espacio vemos en 
+consola. Esto es importante saberlo en caso que tengas que decidir cuándo usar estas propiedades .textContent o .innerText. Y final mente tenemos 
+una tercera opción que se denomina .innerHTML esta propiedad es un poco diferente a las dos anteriores que solo retornaban textos en cambio 
+.innerHTML va retornar la estructura html interna de ese elemento como una cadena de caracteres. En consola podemos ver toda esa parte de la 
+estructura html como si fuera el archivo index.html incluyendo las etiquetas de apertura de cierre de cada uno de esos elementos incluyendo las 
+class sus id. en contraste a las dos anteriores propiedades solo obteníamos el texto.
+Esa son las tres formas de poder acceder al texto de un elemento.                      
+*/               
+const listaDeToppings = document.getElementById("lista-toppings"); 
+console.log("> innerText");
+console.log(listaDeToppings.innerText);
+console.log("> textContent");
+console.log(listaDeToppings.textContent);
+console.log("> innerHTML");
+console.log(listaDeToppings.innerHTML);
+
+/*
+Acceder al texto de un elemento:
+Al igual que podemos acceder a l texto al contenido de ese elemento, también podemos modificarlo. Vamos a obtener el elemento titilo y vamos a 
+cambiar su contenido y verificamos con la herramienta de Chrome en la consola  const modificarTitulo = document.getElementById("titulo"); y 
+efectivamente tenemos el título h1 y si obtenemos su valor innerText vamos a obtener toppings de pizza, digamos que queremos cambiar ese texto como 
+tal, lo que hacemos en ese caso es asignar una cadena de caracteres a la propiedad .innerText digamos que optamos por “Mis toppings favoritos”  
+Verificamos en consola y podemos ver el cambio realizado con el nuevo texto. Simplemente se modificó el texto de ese elemento en el DOM con una 
+sola línea de código→ titulo.innerText = "Mis toppings favoritos"; 
+titulo = document.getElementById("titulo");
+*/
+console.log(titulo);
+console.log(titulo.innerText);
+titulo.innerText = "Mis toppings favoritos"; /*Se modifico el titulo h1 */
