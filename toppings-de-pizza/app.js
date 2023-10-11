@@ -366,13 +366,53 @@ console.log(primer_Topping.classList.contains("fondo-marron"));
 primer_Topping.classList.remove("toppings")
 
 /*
+Crear un Elemento:
+Veamos cómo puedes crear un elemento desde cero, eso sí solo lo puedes realizar con JS y luego agregar ese elemento al DOM de forma 
+dinámica, eso es muy útil como por ejemplo recibes información de un servidor o de una API recibes es información en un formato json que 
+se usa para intercambiar datos en desarrollo web y necesitas transformar  esa información en elementos HTML que los usuarios puedan ver con 
+los cuales puedan interactuar, lo puedes realizar en forma dinámica. De alguna forma digamos que el usuario va a poder ingresar un toppings 
+nuevo. En ese caso deberíamos tomar ese elemento nuevo y crear ese elemento en el DOM. Lo primero que debemos hacer es crear un elemento 
+nuevo con el método createElement(); Que tipo de elementos queremos crear? Un elemento (li) un elemento de lista. A ese elemento si lo 
+agregamos desde cero sin personalizar nada veamos qué es lo que ocurre. Para agregarlo primero necesitamos obtener una referencia al elemento 
+del DOM donde queremos agregarlo porque en este momento JS no sabe nada de nuestro documento, no tenemos referencia a ningún otro elemento 
+más que el toppings nuevo, vamos a obtener alguna referencia a la lista de toppings que es donde vamos agregar ese elemento li y si vamos a 
+nuetro archivo index.html vemos que el id de ul es lista-toppings.
+Agregar un Elemento:
+Ahora si tenemos una referencia de esa lista const lista_Toppings = document.getElementById("lista-toppings"); donde queremos agregar el 
+topping nuevo porque todo funciona dentro de un contexto y es importante que recuerdes que al agregar un elemento tenemos que especificar 
+donde queremos agregarlo. Eso lo podemos hacer con el método .append Este método nos va a permitir agregar un Nodo en esta lista. 
+En resumen: vamos agregar un toping nuevo a la lista de toppings, veamos qué es lo que ocurre porque en este momento no tiene ningún 
+contenido ni ningún estilo. Si vamos a Chrone en Console vemos que no pasa nada, no ves nada pero en Element vemos que el elemento agregado 
+está allí lo podemos ver en el DOM si lo expandimos ▼ podemos ver que está pero no tiene ningún estilo, tampoco ningún contenido. Antes de 
+agregarlo en realidad deberíamos asignarles esas propiedades y esos estilos importantes, entre esos vamos agregar una clase, tomando la 
+lista de clases y el método  .add dos clases importantes ¡Sí! Con el método .add puedes agregar dos clases a la vez solo tienes que 
+separarlas con comas. Abrimos Chrone, Element y podemos ver en el DOM que este último elemento li ahora si tiene un estilo asignado porque 
+tiene la clase toppings y tiene la clase fondo-marron. Lo único que nos falta es el texto, para eso podemos personalizar lo que vimos 
+anteriormente el método .innertext agregando  un texto “Queso extra” vamos a Chrone en Element vemos que se agregó a la lista de la clase 
+topping y fondo marron.
+Remover un Elemento:    
+Así como podemos crear, agregar elementos también podemos eliminarlo, escribimos el nombre del topping nuevo y luego llamamos al método 
+.remove() vamos a Chrone en Element vemos que el elemento nuevo ya no existe removió ese elemento del DOM, lo mismo puedo aplicarlo a 
+cualquier elemento por ejemplo si quiero eliminar toda la lista de toppings puedo llamar al método .remove() vamos a Chrone en Element 
+vemos que la lista de toppings ya no existe tan sencillo como eso. Lo único que necesitamos es una referencia en el DOM, digamos que sería 
+como darle una dirección donde quereos que se desarrollen los acontecimientos.         
+const lista_Toppings = document.getElementById("lista-toppings"); También existe otro método llamado .appendChild también funciona y funciona 
+para elementos html vamos a Chrone en Element vemos que en este caso es equivalente. Esto funciona con elementos html y si usamos 
+.append podemos agregar texto lista_Toppings.append(¡Hola Mundo!); vamos a Chrone en Element vemos que se agregó un Nodo ¡Hola Mundo! 
+Que no es un elemento html como tal se agrega el texto pero es un texto sencillo no es un texto que es parte de otro elemento html.
+*/
+const lista_Toppings = document.getElementById("lista-toppings"); /* Dar una referencia a ese elemento en el DOM*/ 
+const toppingNuevo = document.createElement("li"); /*.createElement Crea un elemento*/
+toppingNuevo.classList.add("toppings", "fondo-marron"); /*.add agrega una clase a lista de clase*/
+toppingNuevo.innerText = "Queso extra";/*innerText nos permite personalizar el texto del elemento*/
+lista_Toppings.append(toppingNuevo); /*.append nos permite agrgar un Nodo dentro de otro elemento*/
+/*toppingNuevo.remove(); .remove nos permite remover un Nodo*/
+lista_Toppings.append("¡Hola Mundo!"); /*Agrega un texto sencillo, no es parte de otro elemento html*/
+
+/*
+Recorrer el DOM:
 
 */
-const lista_Toppings = document.getElementById("lista-toppings"); 
-const toppingNuevo = document.createElement("li");
-toppingNuevo.classList.add("toppings", "fondo-marron");
-toppingNuevo.innerText = "Queso extra";
-lista_Toppings.append(toppingNuevo);
 
 
 
