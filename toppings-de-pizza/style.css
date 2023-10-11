@@ -108,3 +108,7 @@ Clases fondo naranja que va asignar ese color en la ul para los que tienen ese f
 .fondo-naranja{
   background-color: #ff7b0f;
 } 
+
+.texto-verde{
+  background-color: rgb(2, 190, 2);
+}

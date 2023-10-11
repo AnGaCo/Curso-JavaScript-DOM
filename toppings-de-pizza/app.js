@@ -269,15 +269,113 @@ console.log("> innerHTML");
 console.log(listaDeToppings.innerHTML);
 
 /*
-Acceder al texto de un elemento:
-Al igual que podemos acceder a l texto al contenido de ese elemento, también podemos modificarlo. Vamos a obtener el elemento titilo y vamos a 
+Acceder al texto de un elemento: elemento = document.getElementById("elemento");
+Al igual que podemos acceder al texto, al contenido de ese elemento también podemos modificarlo. Vamos a obtener el elemento titulo y vamos a 
 cambiar su contenido y verificamos con la herramienta de Chrome en la consola  const modificarTitulo = document.getElementById("titulo"); y 
 efectivamente tenemos el título h1 y si obtenemos su valor innerText vamos a obtener toppings de pizza, digamos que queremos cambiar ese texto como 
 tal, lo que hacemos en ese caso es asignar una cadena de caracteres a la propiedad .innerText digamos que optamos por “Mis toppings favoritos”  
 Verificamos en consola y podemos ver el cambio realizado con el nuevo texto. Simplemente se modificó el texto de ese elemento en el DOM con una 
 sola línea de código→ titulo.innerText = "Mis toppings favoritos"; 
-titulo = document.getElementById("titulo");
 */
-console.log(titulo);
+console.log(titulo);/*La constante titulo esta declarada en la linea 54 y se le asigna el metodo .getElementById(titulo); */
 console.log(titulo.innerText);
 titulo.innerText = "Mis toppings favoritos"; /*Se modifico el titulo h1 */
+
+/* 
+Atributos:
+Ahora veremos cómo podemos modificar los atributos de un elemento. Después de la lista no ordenada de toppings vamos agregar un enlace para 
+modificar el atributo href no lo colocamos en una pestaña nueva para fines de la demostración <a href="https://www.freeCodeCam.org/Español/"> 
+definimos una constante para el enlace y vamos a seleccionar los elementos por el nombre de su etiqueta. En este caso va a ser la etiquita→a Veamos 
+el valor de  enlace en consola, es una colección html con tan solo un elemento el elemento que tenemos para el enlace. Como es una collection html 
+vamos a seleccionarla con su índice [0] y cuando lo seleccionamos vamos a poder trabajar con ella como si fuera cualquier otro elemento, cualquier 
+otro objeto del DOM. Y si necesitamos verificar algunos de sus atributos podemos llamar el método→.getAttribute("href") en este caso el valor de 
+href en consola lo podemos ver→https://www.freeCodeCam.org/Español/ podemos trabajar con ese valor en nuestro programa, modificarlo o eliminarlo si 
+lo necesitamos. Para eliminar ese atributo usamos el método→.removeAttribute al ejecutar ese método seguidamente vemos en Console el valor undefinet 
+y pasamos a Elements en la etiqueta de apertura ya no vemos el atributo href por que fue eliminado dinámicamente en el DOM ese atributo ya no es 
+parte de ese elemento html. Si necesitamos obtenerlo usamos el método .getAttribute() y también si necesitamos actualizarlo podemos usar el método 
+.setAttribute() Especificamos en el código como primer argumento el atributo que quiero personalizar→href ya que es el único enlace que tenemos en 
+la página y su índice es [0] y como segundo argumento paso el valor que quiero asignar codigo→.setAttribute("href", "https://www.freeCodeCam.org")); 
+vemos en la herramienta de Chrome Elements el resultado, vemos como se actualizo el DOM ahora ese enlace tiene como referencia, como destino→ 
+https://www.freeCodeCam.org ya no vemos /español así es como podemos actualizar los atributos y esto funciona con cualquier atributo valido en 
+html para ese elemento.
+*/
+const enlase = document.getElementsByTagName("a");
+console.log(enlase[0].getAttribute("href"));/*verificacion de su atributo*/
+/*console.log(enlase[0].removeAttribute("href"));Eliminacion de su atributo*/
+console.log(enlase[0].setAttribute("href", "https://www.freeCodeCam.org")); /*actualizar el atributo*/
+
+/*
+Clases:
+Otras operaciones importantes que puedes realizar en JS son agregar modificar y eliminar clases en forma dinámica con esta operación. 
+Nuevamente vamos a seleccionar el primer toppings que consigamos en el DOM. Estamos usando los toppings solo para fines de demostración 
+para que nos concentremos en las operaciones nuevas. Vamos a mostrarlo en la consola y ahí lo podemos ver. <li class="toppings fondo-marron" 
+id="aceitunas" style="background-color: blue; color: rgb(109, 255, 0); text-transform: uppercase;">Aceitunas</li>.
+En JS cada uno de esos elementos que estamos seleccionando en el DOM va a tener una propiedad llamada .classList es una lista de todas las 
+clases que tiene actualmente ese elemento “pirimerToppings” en el DOM,  en consola lo puedes ver DOMTokenList(2) ese elemento tiene 2 clases, 
+la clase .toppings y la clase fondo-marron puedes ver que es como un array con dos elementos cada uno tiene su índice [0][1] de igual forma 
+puedes acceder a ellos. Vemos que  tiene la propiedad lengts: que puedes usar en el programa y también tiene la propiedad value: en caso que 
+necesites obtener toda esa cadena de caracteres con la lista de clases. 
+{
+    "0": "toppings",
+    "1": "fondo-marron"
+    Lengts: 2
+    Value: “toppings fondo-marron”
+}
+Agregar una Clase:   
+Si necesitamos agregar una clase a un elemento escribimos el nombre de ese elemento luego que ya lo seleccionamos en el DOM luego 
+class.list y luego llamamos al método .add()→(en español agregar) y agregamos en los patentices una clase espesifica mi-Clase que todavía 
+no le hemos asignado ningún estilo es solo para fines de demostración. Es para  verla aquí en la lista de clases DOMTokenList(3) vemos que 
+se agregó una porque ahora vemos 3 y vemos mi-Clase en la lista que se retornó. También si vamos a Elements y seleccionamos ese elemento 
+podemos ver que ahora tiene una tercera clase llamada mi_Clase, si esa clase tuviera un estilo en el archivo Css se aplicaría ese estilo.  
+*/ 
+const primer_Topping = document.querySelector(".toppings");
+primer_Topping.classList.add("mi-Clase");
+console.log(primer_Topping);
+console.log(primer_Topping.classList);
+
+/*
+Incluir la clase en el archivo Css:
+En otro ejemplo con el toppings-fonfo-Naranja,  aplicando lo aprendido anterior mente vamos a nuestro archivo Css y agregamos una nueva 
+clase que la llamaremos  texto-verde y le asignamos el color verde neón. Estamos agregando esa clase al primer toppings de fondo-naranja 
+que sería el elemento cebolla y también mostramos la lista de clases para confirmar que existe. En Chrone vamos a Console y podemos ver que 
+se aplicó el estilo texto-verde
+*/
+const segundo_Topping = document.querySelector(".toppings.fondo-naranja");
+segundo_Topping.classList.add("texto-verde");
+console.log(segundo_Topping);
+console.log(segundo_Topping.classList);
+
+/*
+Verificar si una Clase existe: 
+Otra operación importante también es verificar si un elemento posee una clase o no. Eso lo podemos confirmar con el método contains() este 
+método nos permite verificar si una clase especifica existe en esa lista de clases en este caso  <ul id="lista-toppings"> Digamos que 
+queremos verificar si tiene la class="toppings fondo-marron". En ese caso como se va a retornar un valor, no es una acción si no que se va 
+a retornar un valor boolean true o false. Vamos a mostrar ese valor con consol.log() y vemos el resultado que es true porque ese elemento 
+si posee esa clase. Si pasamos una clase que no tiene ese elemento veremos que el valor es false. Esto es útil en caso que necesites 
+usarlo en un condicional o en un bucle, más que todo en los condicionales son muy útiles.
+Eliminar una clase:  
+También se puede eliminar una clase de un elemento, esa operación también es muy útil. Para eso usamos el método remove() y pasamos entre 
+paréntesis el nombre de la clase, veamos qué  ocurre si eliminamos la clase toppings a ese elemento. Vamos a Chrone y vemos que el topping 
+ya no tiene el estilo asociado a los toppings porque es simplemente otro elemento más sin esa clase, si vemos la lista de clase en Console 
+ya no la tiene solo tiene la clase fondo-marron.
+Y así es cómo podemos agregar y eliminar una clase y como verificar si un elemento tiene una clase o no. Estas son operaciones muy útiles 
+que vas a usar a menudo si trabajas con el DOM. Ahora como ya sabes cómo agregar clases y estilos entonces vamos a ver cómo puede crear 
+agregar y eliminar elementos en el DOM.
+*/
+console.log(primer_Topping.classList.contains("fondo-marron"));
+primer_Topping.classList.remove("toppings")
+
+/*
+
+*/
+const lista_Toppings = document.getElementById("lista-toppings"); 
+const toppingNuevo = document.createElement("li");
+toppingNuevo.classList.add("toppings", "fondo-marron");
+toppingNuevo.innerText = "Queso extra";
+lista_Toppings.append(toppingNuevo);
+
+
+
+
+
+
