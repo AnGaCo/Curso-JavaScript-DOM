@@ -411,11 +411,73 @@ lista_Toppings.append("¡Hola Mundo!"); /*Agrega un texto sencillo, no es parte 
 
 /*
 Recorrer el DOM:
-
+Ya sabes como como crear, agregar y eliminar elementos del DOM con JavaScript esas operaciones son muy útiles. Ahora veamos cómo puedes 
+recorrer el DOM porque JS nos permite aprovechar esa jerarquía con Nodos padres, nodos hijos, nodos hermanos toda esa jerarquía nos va a 
+permitir recorrer el DOM con nuestro código en caso de que lo necesitemos. Por ejemplo digamos que tenemos el elemento listaDeTtopping en 
+caso de que ocurra algo, realizar alguna operación con su elemento o Nodo padre simplemente podemos seleccionar una de estas dos opciones 
+parentElement “elemento padre” o parentNode “el Nodo padre” hay que recordar la diferencia entre elemento y Nodo. Nodo es más amplio e 
+incluye también textos o comentarios pero el elemento padre solo incluyen los elementos html asique si queremos obtener el parentElement 
+de esa lista veamos que obtenemos vamos a Chrome en Console vemos el elemento contenedor el div principal ese es el elemento que contiene a 
+la lista de toppings. Es el elemento padre  del elemento ul de la lista y también es el elemento padre de título asique podemos obtener una 
+referencia a ese contenedor sin obtenerlo directamente si no indirectamente a través de la lista de toppings, eso va a ser importante
+porque por ejemplo en nuestro código a veces vamos a necesitar realizar operaciones con el padre cuando ocurra algo en el hijo por ejemplo 
+digamos si hago click en algunos de estos ingredientes de algunos de estos topings quiero cambiar el color de fondo del contenedor solo por 
+decir un ejemplo en ese caso yo podría decir que cuando ocurra algo en esa lista, en esos ingredientes, en esos toppings quiero que el 
+contenedor cambie de color de fondo. Indirectamente tenemos que afectar el contenedor puedo simplemente usar esta alternativa 
+.parentElement con la notación de punto y selecciono a su padre es más sencillo. Ahora si tenemos el Nodo padre .parentNode veamos que 
+obtenemos vamos a Chrone en Console vemos que obtenemos aquí div►# contenedor si ▼ expandimos puedes ver todas las características, todas 
+las propiedades de ese Nodo siempre recordando que Nodo es más amplio. Si queremos ir todavía más arriba en la jerarquía podemos crear una 
+cadena una secuencias de referencia al padre. Aquí estamos obteniendo el padre de la lista de toppigs→ lista_Toppings.parentElement y luego 
+usando la notación de punto obtenemos el padre del padre de la lista de toppings→ lista_Toppings.parentElement.parentElement); y así 
+sucesivamente vamos a Chrome en Console vemos que obtenemos ►body ya fuimos más arriba todavía en lugar del contenedor principal, eso es en 
+el caso de los padres también podemos obtener los Nodos o elementos hijos. En ese caso necesitamos la propiedad .children→ 
+“En español hijo” esta propiedad nos va a dar todos los Nodos hijos en la lista de toppings en base a una HTMLCollection(5) en consola lo 
+podemos ver, tiene 5 hijos esa lista de toppings expandimos ▼y estos 5 elementos los podemos usar de forma individual con sus [i] índices 
+pero tenemos acceso a ellos gracias a esa propiedad .children es que no estamos accediendo a ellos directamente si no indirectamente a 
+través de la lista de toppings y eso es útil también para realizar ciertas operaciones en nuestro código además de .children también 
+tenemos la opción de seleccionar el primer hijo con la propiedad .fistChild En este caso inesperadamente vemos el ►#text ¿por qué? 
+Esta propiedad trabaja con Nodos y desafortunadamente en este caso como estamos incluyendo espacios, indentación, ese espacio también se 
+toma como un Nodo. Si quitáramos la indentación en nuestro archivo html en lugar de ►#text lo que se mostraría es el próximo elemento 
+<li class= "toppings fondo-marron" id="aceitunas">Aceitunas</li> exactamente lo que esperábamos pero como trabaja con Nodos esta propiedad 
+.firstChild normalmente obtendríamos textos en lugar de un elemento como tal por que por norma siempre nuestro código esta indectado 
+adecuadamente para poder leerlo correctamente. En ese caso en vez de usar .firstChild usaríamos la propiedad .children y usamos el índice 
+correspondiente [0] y allí tendríamos accesos a ese primer hijo directo del elemento, esa propiedad si nos retornaría elementos html. 
+También podemos usar esta otra propiedad .lastChild que también usa Nodos y sucede lo mismo que con .fistChild nuevamente en Console vemos 
+►#text ya que en nuestro archivo usamos el código indectado en este caso no nos ayuda. Pero por fortunas esas dos propiedades también 
+tienen su versión para obtener elementos html en lugar de usar .firstChild usamos la propiedad .firstElementChild y esto va a ser lo más 
+práctico para nosotros si necesitamos obtener esos elementos html en Console podemos ver un elemento html el cual tiene propiedades, en 
+este caso si verificamos con typeof vemos que es un obj de JS y también tenemos el equivalente para el último elemento hijo y en Console lo 
+podemos ver es el toppings Queso extra. Asique tenemos las dos versiones, para trabajar con Nodos y para trabajar con elementos. Entre 
+.last y Child agregamos la palabra Element para obtener un elemento html que no incluya ni texto ni los comentarios. Y también además de 
+padres e hijos tenemos hermanos ¿Cómo podemos obtener los hermanos de toppings? En este caso si nos vamos a Chrone en Element venos que 
+sería h1 titulo que están en el mismo nivel en jerarquía que ul que pertenecen a contenedor que están dentro de ese div ¿Como podemos 
+obtener titulo indirectamente a través de lista de toppings? Eso lo haremos con la propiedad .previousElementSibling 
+“En español .anteriorElementoHermano” y en Chrone en Console allí lo que vamos a ver es el elemento titulo porque obtuvimos el hermano 
+anterior de la lista de toppings. También podemos ver el hermano posterior de la lista de toppings con la propiedad .nextElementSibling 
+pero en este caso no tenemos ninguno en el mismo nivel de la jerarquía por lo tanto veremos null y también tenemos la versión para trabajar 
+Nodos si omitimos la palabra Element vamos a obtener un Nodo .nextSibling en este caso es texto como vimos anteriormente por los espacio o 
+indectado y .previousSibling también nos va a retornar texto asique normalmente vamos a trabajar con la versión que contiene Elements y así 
+es como recorrer el DOM con notación de punto usando estas propiedades. 
+Recuerda para .parentElement y .parentNode también tenemos .fistChildren para todos los hijos. Tenemos el .fistChild y .firstElementChild 
+tenemos el .lastChild y .lastElementdChild (last significa último en español) y también tenemos .nextElementSibling y .nextSibling y 
+también tenemos .previousElementSibling y .previousSibling para padres, hijos y hermanos y también puedes encadenar esa notación de punto 
+para ir más arriba, más abajo o más profundo en el DOMcomo lo hicimos en el primer ejemplo: 
+console.log(lista_Toppings.firstElementChild.firstElementChild); con esto se obtiene “hijo del primer hijo de la lista de toppings” o 
+console.log(lista_Toppings.parentElement.parentElement); obtenemos el padre del padre de la lista de toppings, 
+Con todas estas propiedades puedes hacer exactamente lo mismo siempre deberías verificar que estas propiedades no sean Nodos que en 
+verdad existe y no sea nulo el elemento y así se recorre el DOM. 
 */
-
-
-
-
-
-
+/*
+A continuacion vemos como comentarios codigo muy util de lo anteriormente explicado:
+console.log(lista_Toppings.parentElement); el elemento padre solo incluyen los elementos html 
+console.log(lista_Toppings.parentNode); Nodo es más amplio e incluye también textos o comentarios 
+console.log(lista_Toppings.parentElement.parentElement); usando la notación de punto obtenemos el padre del padre  
+console.log(lista_Toppings.children); obtener los Nodos o elementos hijos
+console.log(lista_Toppings.firstChild); opción de seleccionar el primer hijo pero el resultado es ►#text  
+console.log(lista_Toppings.children[0]); [0] asi tendríamos accesos a ese primer hijo directo del elemento 
+console.log(lista_Toppings.lastChild); al igual que .firstChild el resultado es ►#text
+console.log(lista_Toppings.firstElementChild); Como resultado un elemento html el cual tiene propiedades
+console.log(lista_Toppings.lastElementChild); resultado [5] último elemento hijo 
+console.log(lista_Toppings.previousElementSibling); se obtiene el hermano anterior de la lista de toppings 
+console.log(lista_Toppings.nextElementSibling); se obtiene el hermano posterior de la lista de toppings
+*/
