@@ -481,3 +481,7 @@ console.log(lista_Toppings.lastElementChild); resultado [5] último elemento hij
 console.log(lista_Toppings.previousElementSibling); se obtiene el hermano anterior de la lista de toppings 
 console.log(lista_Toppings.nextElementSibling); se obtiene el hermano posterior de la lista de toppings
 */
+/*
+Eventos del DOM:
+
+*/

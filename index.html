@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Curso JS-Dom</title>
-    </head> 
+  </head> 
   <body>
     <!-- El elemento <body> representa el contenido de un documento HTML.-->
 		<h1>-Curso-JavaScript-DOM-</h1>
@@ -17,6 +17,10 @@
 		<a href="#parrafo-4">Nodos Vs. Elementos</a>
 		<a href="#parrafo-5">Herramientas de Desarrollo de chrome</a>
     <a href="#parrafo-6">Nodos que no son tal</a>
+    <a href="#parrafo-7">CSS: Estilos generales</a>
+    <a href="#parrafo-8">HTML: El body</a>
+    <a href="#parrafo-9">CONTENIDO:</a>
+    <a href="#parrafo-10">Vincular JavaScript a HTM</a>
 		<h3 id="parrafo-1">Que es el DOM?</h3>
 		<p>
 		Que es el DOM? Ese es el modelo que vamos a usar durante el curso y esta estrechamente 
@@ -159,7 +163,9 @@
     y a mediada que nos internamos podemos ver cómo se va construyendo esa estructura del DOM y también dentro de estos elementos tenemos textos.
     Además de esto como estamos usando la extensión live server para actualizar nuestros cambios en vivo vemos los elementos de comentarios que 
     ha sido agregado por esa extensión esto nos dice que si son parte del DOM si se reflejan en las herramientas de chrome.
-    CAMBIAR EL DOM:
+    </p>
+    <p>
+	  <mark>CAMBIAR EL DOM:</mark>
     En las herramientas de Chrome podemos hacer cambios, si haces doble click en el texto de algún a los elemento puedes modificarlo y esto en 
     realidad no es html es una versión interactiva del DOM puedes confirmarlo si haces click derecho se despliega un menú de opciones que nos 
     permite editar el elemento como si fuera html. Veamos la de diferencia de editar texto o como html se recuerda que el texto se representa de 
@@ -176,7 +182,7 @@
     </p>
     <h3 id="parrafo-6">Nodos que no son tal</h3>
     <p>
-	<mark>Nodos que no son elementos:</mark>
+	  <mark>Nodos que no son elementos:</mark>
     Veamos un poco más sobre los elementos que son Nodos pero no son como tal elemento html, mencionamos que el texto era uno de ellos y que los 
     comentarios era uno de ellos. Si agregamos un comentario dentro del body <!--Comentarios--> Como tenemos la extensión live server activada se 
     va actualizar automáticamente y en las herramientas de Chrome lo podremos ver el comentario como parte del DOM, no es un elemento html como el 
@@ -189,6 +195,54 @@
     <p>
     Proyecto: Toppings de Pizza
     <h2>HTML, CSS, JavaScript</h2>
+    </p>
+    <H3 id="parrafo-7">CSS: Estilos generales</H3>
+    <P>
+    Con el selector universal vamos asignar por defecto un margin: 0; y padding: 0; esto se recomienda y lo vas a ver comúnmente para que ningún 
+    elemento tenga un margin o padding asignado por defecto en el Browser pero cuando iniciamos esto de la forma mencionada estamos reseteando todo 
+    eso. También vas a encontrar esta propiedad box-sizing: border-box; esto le dice al Browser como va a calcular el tamaño en base a su margin y 
+    a su padding, border-box es una de las propiedades específicas de los valores específicos. Y luego el tipo de fuente font-family: "lato", sans-serif;  
+    </P>
+    <h3 id="parrafo-8">HTML: El body</h3>
+    <p>
+    Para el body vamos a usar (flexbox) display: flex; justify-content: center; y otras propiedades, vemos aquí align-items: center; vemos la 
+    altura→height: 100vh; va a ser 100% la altura de la ventana va a tener toda la dimensión así que vamos a poder centrar lo relativo al tamaño 
+    completo total de la ventana donde se está viendo el contenido text-align: center; alineamos en el centro y el fondo va a ser una imagen 
+    background: url(imagenes/pizza.jpg) Tambien además de la img vamos a especificar algunos valores para ese fondo. No vamos a repetir el 
+    fondo→no-repeat lo vamos a centrar→center center/cover; y de esta forma vamos a lograr que se vea de una forma peculiar el fondo, se va a 
+    poder ver centrado independientemente del dispositivo puedes ver en el proyecto como se reajusta el fondo La imagen seleccionada va a estar 
+    ubicada en la carpeta de imágenes de nuestro proyecto.  
+    </p>
+    <h3 id="parrafo-9">CONTENIDO:</h3>
+    <p>
+    Vamos asignar estos estilos, primero tenemos el id que funciona como un contenedor entonces vamos asignarle un estilo a ese contenedor con 
+    un id→#contenedor ese contenedor va a ser flex, flex-wrap: wrap; para que todo se reajuste de acuerdo a cuanto espacio está disponible. 
+    justify-content: center; align-items: center; vamos alinearlos en el centro vertical y horizontalmente. min-height: 80vb; y la altura mínima 
+    de ese contenedor va a ser 80% de la altura de la ventana o donde se está viendo el contenido también el ancho de la ventana width: 80vh;  
+    va a ser el 80% pero va a tener un ancho max-width: 600px; de 600px asi si en la pantalla o el monitor donde se está viendo es muy ancho el 
+    máximo se lo indicamos en 600px. El color de fonfo background-color: white; va a ser blanco y el borde border: 4px solid black; va a ser de 
+    4px sólido y negro. Se puede ver en la aplicación un ancho máximo pero en dispositivos móviles se reajusta bien eso es para el contenedor principal.   
+    Ahora para el título principal h1 el tamaño de la letra font-size: 3rem; va a ser 3 rem para que sea grande va a tomar el 100% del ancho de su 
+    contenedor y va a tener un margen  margin: 20px 10px; de 20px arriba y abajo y 10px a los lados.
+    Seguidamente vamos a señalar un estilo a la clase toppings, en html se asigna a cada uno de los elementos de la lista. El tipo de letra font-size: 
+    2rem; va a ser 2rem, el peso de la letra font-weight: bold; va a ser negrita color color: white; blanco luego va a ser display: flex; flex-wrap: 
+    wrap; para que nos permita que los distintos toppings estén en distintas líneas, también vamos a centrar justify-content: center; alineado 
+    align-items: center; vamos a centrar, el ancho→width: 100%; cien por ciento, altura→height: 80px; y un margen→margin: 15 0; y cero  
+    Clases fondo marrón que va asignar ese color en la ul para los que tienen ese fondo background-color: #aa5822;  
+    Clases fondo naranja que va asignar ese color en la ul para los que tienen ese fondo background-color: #ff7b0f;
+    El estilo a la lista→ul no ordenada el ancho de esa lista va a ser cien por ciento de su contenedor→width: 100%; y el alto va ser cien por ciento
+    →height: 100%; 
+    </p>
+    <h3 id="parrafo-10">Vincular JavaScript a HTM</h3>
+    <p>
+    Vamos a comenzar a usar JS para acceder a los elementos de este DOM, para eso vamos a tener que conectar el archivo html con el de 
+    JavaScript. Nos dirigimos al final de la etiqueta body pero dentro de body vamos a especificar donde se encuentra  el archivo.JS. Como 
+    esta en la misma carpeta y al mismo nivel simplemente escribimos el nombre del archivo.js y ya eso nos va a permitir que el elemento 
+    script importe es archivo de JS y lo vincule con html de modo tal que lo podremos usar en nuestra página web. Ya tenemos la estructura y 
+    el maquetado y podemos ver como se adapta a nuestros dispositivos. Otra herramienta muy útil de Desarrollo de Chrom en el vértice superior 
+    izquierdo veremos una flechita tipo puntero, justo al lado hay otro icono que es cómo una tableta y un teléfono si hacemos click ahí al 
+    seleccionarla se pondrá de color azul y vamos a entrar en el modo de vista previa responsiva  si arrastras con el cursor estos indicadores 
+    puedes simular estar en un dispositivo de un ancho diferente y podrás apreciar cómo se ajustan los elementos.  
     </p>
     <figure>
       <img src="https://i.imgur.com/aveKEEp.jpg" alt="Imajen de metodos con JavaScript" width="350" height="200"> 
