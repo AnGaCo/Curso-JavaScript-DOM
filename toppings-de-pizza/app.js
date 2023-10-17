@@ -483,5 +483,58 @@ console.log(lista_Toppings.nextElementSibling); se obtiene el hermano posterior 
 */
 /*
 Eventos del DOM:
-
+En esta parte vamos hablar un poco de los eventos, xq los eventos son muy importantes al momento de interactuar con el DOM. 
+Eventos, en una definición no muy formal podemos decir que un Evento es “Algo” que ocurre en un sitio web como resultado de interacción 
+con el usuario por otra causa como cambios en el estado del dispositivo o de la ventana, todos esos evento que ocurren en el sitio WEB van 
+a desencadenar eventos formalmente en el sistema, en el navegador y eso nos va a permitir saber cuándo ocurren esos eventos cuando el usuario 
+este interactuando con distintos elementos de la página y también nos permite definir cómo manejar esos eventos en caso de que ocurran por 
+ejemplo uno de los más comunes es el evento de click y cada interacción con el ratón se va a registrar como un evento en el navegador y el 
+navegador va a saber sobre cuál de esos elementos se hizo el click y vamos a poder decir en caso de que ocurra el click que es lo que vamos 
+hacer en nuestro código. ¿Cómo podemos manejar ese evento? todo eso lo podemos definir con JS y también otro evento común es la iteración 
+con el teclado, presionar alguna tecla. Podemos lograr que ciertos elementos que nos interesan en el DOM sepan cuando ocurren uno de esos 
+eventos cual de esos elementos fue afectado debería reaccionar en base a ese evento y también cuál de esas teclas fue presionada para saber 
+cómo manejar ese evento adecuadamente por ejemplo un caso común sería un juego, si estas desarrollando un juego interactivo en JS y el usuario 
+presiona alguna de las teclas xej izquierda o derecha para avanzar y retroceder o arriba y abajo para saltar, todos eso eventos estarían 
+registrados y podríamos manejarlos de acuerdo a la tecla que fue presionada todo eso es parte del DOM también cambios en la ventana de la 
+pestaña o del navegador también pueden se registrados, se registran automáticamente y puedes manejarlos. Otro evento bastante común en JS 
+es el evento de arrastrar xej en una página web te pide que arrastres una imagen para subir y asignarla como tu imagen de perfil. Ese evento 
+de arrastrar un archivo asía un elemento en particular y que luego ocurra algo se maneja gracias a la combinación entre el DOM y JS a través 
+de esos eventos y también recientemente eventos que deberías manejar son eventos que pueden ocurrir en dispositivos táctiles puedes manejar 
+distintos gestos que realice el usuario de distintas formas así que puedes ver que los eventos son bastantes dinámicos y se pueden adaptar 
+a distintas necesidades como desees manejarlos. Existen muchos eventos que puedes manejar y puedes encontrarlos en distintos artículos o en 
+recursos en línea. En este curso solo veremos algunos de los más comunes como los elementos del teclado y del cursor pero una vez que sepas 
+manejar estos eventos manejar otros tipos de eventos es exactamente igual o muy parecidos lo que se necesita saber es la sintaxis de cómo escribir 
+ese código para manejar el evento y luego lo único que vas hacer es cambiar el nombre del evento y que es lo que quieres hacer con el elemento.
+Conceptos Importantes:                         
+Cuando hablamos sobre eventos en el DOM y al momento de manejarlos con JS es importante que sepas algunos conceptos importantes estos cuatros 
+que a continuacio se detallan. Elemento targuet que significa “blanco” pero no blanco del color sino el blanco que va a recibir algo  
+Trigger también es un concepto que lo vas a recibir muy a menudo es como un desencadenante y luego Event Hander y Event Listener.
+Esto es una lista general para que tengas una idea. Veamos c/u en más detalle: Primero tenemos el elemento target el elemento blanco, xej si 
+tenemos algunas páginas web y hacemos click sobre algunos de esos elementos que podemos ver, como una imagen, un botón algo que tenga una 
+capacidad interactiva ese elemento en el cual se va a generar ese evento es a lo que nos referimos como el target element el blanco de ese 
+evento xq el usuario quiso interactuar con ese elemento asique hay que reaccionar a esa interacción y manejarla adecuadamente. Ese elemento, 
+el elemento blanco va a decirle al navegador que se produjo una acción por eso es que lo denominamos el elemento blanco allí se desencadeno 
+ese evento. Eso nos lleva al próximo termino trigger (en español desencadenar) trigger sería como un desencadenante, esa acción que va a 
+desencadenar un evento xej hacer click que luego se va a poder manejar a travez del DOM y JS eso también nos lleva a un concepto que va a 
+ser fundamental para trabajar con eventos también con librerías y framewrks como xej  React.  Event Handler es una función que se ejecuta 
+cuando ocurre un evento Handler significa manejar es una función que va a manejar un evento cuando ocurra, pero no podemos saber cuándo va 
+a ocurrir el evento asique va a estar allí como pendiente. Vamos asociar esto con nuestro código con una función. Código←→Función para decirle 
+al navegador que cuando ocurra un evento especifico en un elemento especifico vamos a llamar a una función específica de manera tal que estamos 
+asociando todo esto, el elemento, el evento y la función que lo va a manejar si ocurre. Esa asociación que hay en un evento especifico en un 
+elemento y  la función que lo va a manejar es lo que denominamos Event Listener, (En español Listener significa escuchar) es esa conexión que 
+vamos a crear en nuestro código tenemos que crearla explícitamente en JS para asociar un evento en un elemento con una función específica 
+que va a manejar ese evento en ese elemento cuando en ese elemento especifico ocurra un evento se va a llamar esa función pero esa asociación 
+la tenemos que crear nosotros mismos en el programa y lo vamos hacer con unas pocas líneas de codigo. Cuando creamos Event Listener estamos 
+escuchando ese evento, estamos diciéndole al elemento que cuando ocurra este evento llama a esta función y ejecuta su código. Pero como el 
+DOM o el navegador no saben cuándo va a ocurrir ese evento tiene que estar pendiente allí escuchando en caso de que ocurra. Estos serían los 
+conceptos más importantes para trabajar con eventos. El elemento targuet que es el que recibe esa acción que desencadena el evento, el 
+trigger es el desencadenante o es la acción que desencadena el evento, el Event Handler es la función que va a manejar lo que ocurra cuando 
+se desencadena el evento y Event Listener es más o menos como esa conexión que hay entre el evento el elemento y la función que lo va a manejar. 
+Normalmente vas a conseguir estos dos términos Event Handler y Event Listener usados en forma equivalente y los términos a veces se intercambian. 
+En la mayoría de los contextos puedes usarlos de forma prácticamente equivalente, hay ciertas fuentes que distinguen el Event Listener como 
+esa asociación que hay entre el evento y la función y el Event Handler lo espesifican como la función en sí que maneja el evento.
 */
+/*
+Elementos HTML
+*/                          
+
