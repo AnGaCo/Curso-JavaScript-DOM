@@ -362,8 +362,12 @@ Y así es cómo podemos agregar y eliminar una clase y como verificar si un elem
 que vas a usar a menudo si trabajas con el DOM. Ahora como ya sabes cómo agregar clases y estilos entonces vamos a ver cómo puede crear 
 agregar y eliminar elementos en el DOM.
 */
+
+/*
+Se uso el codigo a modo de ejemplo eliminando el primer toppings ahora es comentario para que no interfiera con
+otros ejemplos posteriores
 console.log(primer_Topping.classList.contains("fondo-marron"));
-primer_Topping.classList.remove("toppings")
+primer_Topping.classList.remove("toppings")*/
 
 /*
 Crear un Elemento:
@@ -536,5 +540,106 @@ esa asociación que hay entre el evento y la función y el Event Handler lo espe
 */
 /*
 Elementos HTML
-*/                          
+Ahora vamos a ver un ejemplo práctico en nuestro inde.html de toppings de pizza sobre los Event Listener y cómo puedes ejecutar código cuando 
+ocurra un evento en algún elemento del DOM vemos un ejemplo que sirve para ilustrar este concepto y luego en los proyectos vamos a implementar 
+este concepto de forma más avanzada. Una opción para poder ejecutar código cuando ocurra un evento especifico es indicar toda esta asociación 
+en html digamos que cuando se haga click en el elemento albahaca quiero que se muestre un mensaje en la consola, por eso en html tenemos 
+atributos que representan distintos eventos En este caso tenemos el atributo onclick vamos a manejar un evento de click, si el usuario hace 
+click sobre ese elemento vamos a ejecutar una función específica esa función la vamos a definir en nuestro archivo JS  ese archivo va a tener 
+una función que se va a llamar mostrarClick() es importante que incluyas los paréntesis vacíos o con los valores que requieran y dentro de la 
+función vamos a mostrar un mensaje con console.log(“Click”). En el archivo JS definimos la function mostrarClick() y dentro de la función vamos 
+a mostrar este mensaje (“Click”) cuando el usuario haga click en el toppings que especificamos en la lista ul en el index.html este sería en 
+cuanto a los términos que vimos en las diapositivas.Esto→mostrarClick() sería el Event Handler esa es la función que va a manejar ese evento 
+y esta asociación que hay entre la función y el evento que esta ya predeterminada y lista para ejecutarce cuando ocurra el evento es lo que 
+denominamos también un Event Listener pero ya también ese concepto lo vamos a ver en JS. Veamos cómo funciona como tenemos live server activado 
+ya debería haberse actualizado todo nuestro código. Vamos a Chrone abrimos console y no vemos nada pero si hacemos click en el elemento albahaca 
+nos aparece 1Click anteponiéndose el número 1 y cada vez que hagamos click ese número se irá incrementando el contador. Si hacemos click en 
+alguno de los otros toppings vemos que no se incrementa el contador. Ahora asignemos a c/u de los topipings onclick con la función o sea que 
+reutilizamos la misma función y la asociamos con el resto de los elementos de la lista y de igual forma  obtenemos el mismo resultado que con 
+el toppings Albahaca. Y también podemos personalizarlo, digamos que queremos personalizar el valor. Colocamos un parámetro en la funcion→(topping) 
+de igual manera en console.log(topping); y en index.html en la función mostrarClick(``) los valores que van entre los paréntesis en esos 
+string van comillas simple si no hay error...Lo visto hasta ahora es una alternativa pero la realidad cuando vas a crear aplicaciones más 
+complejas no es tan practico escribir esto→ mostrarClick(`Aceitunas`)" en html porque tendrías que definir este atributo→ onClick y llamar 
+a la función con sus argumentos fijos `Aceitunas` en html. Tenemos otra forma más dinámica de hacerlo a travez de un método llamado 
+.addEventListener y allí entra el concepto que vimos Event Listener, (En español Listener significa escuchar) Ahora veremos cómo podemos 
+usar este método para evitar usar oneClick en c/u de los topping en html es funcional para proyectos sencillos pero normal mente usamos la 
+alternativa que veremos a continuación→ .addEventListener() Veamos como normalmente agregamos un Event Listener a un elemento del DOM, lo 
+hacemos con JS vamos a mantener la función mostrarClick() pero vamos a eliminar toda esa asociación con el elemento onClik en html. 
+Lo primero que vamos hacer en el archivo app.js es obtener una referencia al elemento en el DOM, digamos que queremos el topping albahaca y 
+lo vamos a obtener a través de su id const albahaca = document.getElementById(`albahaca`); una vez que obtenemos el elemento y tenemos la función 
+debemos crear una asociación entre el elemento y la función, cuando se va a llamar esa función y que evento debe ocurrir para que se llame 
+esa función ese es el→Event Listener lo que estamos creando, asociando. Para agregar un Event Listener escribimos el nombre de la variable 
+que contiene ese elemento y luego escribimos el nombre del método .addEventListener(); ese métodos toma dos argumentos. Primero el nombre 
+del evento en este caso vamos a usar el más común  “Click” (pero debes tener en cuenta que hay muchos eventos posible que pueden ocurrir en 
+el documento que en el navegador hay toda una lista y es conveniente investigar cada uno de ellos). Y el segundo argumento el nombre de la 
+función que va a manejar ese evento→ mostrarClick, es importante que la escribas sin paréntesis. También a la función la podríamos crear 
+dentro del método pero en este caso ya está declarada en nuestro archivo app.js Esto→albahaca.addEventListener(`click`, mostrarClick); es 
+lo que crea la asociación entre el elemento, el evento y la función a la cual se va a llamar. Vamos a Chrone abrimos console y cada vez que 
+hacemos click en albahaca vemos un PointerEvent, ¿Por que vemos un PointerEvent? Porque esta función→ mostrarClick por defecto va a recibir 
+un argumento→topping pero no va a ser el topping como queríamos anteriormente va a ser un evento como tal, ese evento se va a representar 
+como un objeto y ese es el objeto que va a recibir como argumento mostrarClick(e); Si cambiamos el nombre a→(e) que es lo que normalmente 
+usamos para representar ese objeto de evento y hacemos click en albahaca vemos en console que es un→PointerEvent ese evento también se 
+representa como un objeto. Todos los eventos en el DOM se representan como objetos en JS si expandimos ▼ vemos que tienen sus propiedades ahí 
+puedes ver xej las coordenadas X clientX:216 e Y clientY:323 donde ocurrió ese evento también podemos ver el tipo de evento que es importante 
+type:"click" algo importante en estas propiedades. 
+Es que registran cual fue el elemento blanco el target de ese evento→target:li#albahaca.toppings.fondo-marron asique si podemos tener acceso 
+a ese elemento con la propiedad target podemos tener acceso a todas sus propiedades y usarlas. Xej si queremos mostrar el target del 
+elemento→console.log(e.target); ahí puedes ver que el target li fue con el texto elemento albahaca y lo obtuvimos solamente con el objeto→e 
+el objeto del evento. Pero digamos que en vez de mostrar ese target quiero mostrar solamente su texto→ console.log(e.target.innerText ); retorna 
+albahaca. Resumiendo: Usamos dos veces notación punto se obtiene primero el blanco de ese evento donde ocurrió y eso retorna un elemento html 
+y luego usamos la segunda notación de punto con el método innerText para obtener su texto interno albahaca y al hacer click lo comprobamos 
+por que se incrementa el contador. Eso es muy útil para personalizar ese texto dependiendo del elemento blanco y recuerda que todas estas 
+propiedades se pueden usar en el programa. Pero vemos que si hacemos click en otro topping no vamos a ver nada entonces vamos hacer unos 
+cambios para poder ver el texto correspondiente y podemos manejar todo eso con una misma función general y eso es lo que buscamos en el 
+código reusarlo lo más que se pueda accediendo al texto interno del texto blanco podemos mostrarlo. Vamos a modificar lo anteriormente hecho 
+para que podamos asignarle un Event Listener a todos los toppings y mostrar su texto correspondiente. Si queremos seleccionar todos los toppings 
+vamos a usar el método .getElementsByClassName() eso nos va a retornar una colección HTML.
+→const todosLosToppings = document.getElementsByClassName(`toppings`) una vez que tenemos la colección html podemos usar un bucle for(of){} 
+para iterar sobre todos esos elementos usamos el bucle fot(of) que también es útil para todosLostopping de la colección toppings, dentro 
+del bucle definimos una constante de tal forma que el código correcto sería→for(const todosLosToppings of toppings) y entre las llaves{ }  c
+onsole.log(todosLosToppings); Y si vamos a Chrone en console podemos ver cada uno de los elementos en el bucle, esta es otra técnica muy poderosa 
+al trabajar con los elementos del DOM. Si obtenemos un colección html podemos iterar sobre esa colección como usaríamos los bucles como xej 
+con un array podemos usar ese bucle para iterar sobre todos esos elementos de la colección y hacer algo con ellos uno por uno para cada iteración 
+en este caso lo estamos mostrando pero también podemos usar un Event Listener para c/u→ toppings.addEventListener(`click`, mostrarClick); 
+a c/u se le va a pasar el evento el objeto del evento→(e) que corresponde a su evento en particular y luego se va a extraer su texto 
+e.target.innerText para poder personalizar donde se hizo Click. Con solo una función podemos lograr algo muy poderoso que va a funcionar con 
+cualquiera de estos elementos gracias al objeto del evento que nos da toda esa información Si vamos a Chrone en console vemos que si hacemos 
+click en aceituna, efectivamente vemos ese topping y si hacemos lo mismo en distintos topping de la lista, sucederá lo mismo veremos los nombres 
+de cada topping donde demos click y todo eso lo hacemos de forma dinámica en JS no hay nada fijo cien por ciento como lo teníamos anteriormente 
+en htm. Este método→.getElementsByClassName() va a seleccionar todos los elementos de la clase que le pedimos, en este caso “toppings” y 
+luego vamos a poder asignarle a cada uno los Event Listener. Otra alternativa que también es muy usada es que en lugar de definir una función 
+aparte una función como tal→function mostrarClick(){ } podemos definir la función si es pequeña o precisa dentro del bucle for como una 
+alternativa, se recomienda tenerla separada. Tomaríamos de la anterior función solo el objeto entre paréntesis→(e) y definiríamos una función 
+=> { } flecha como una alternativa defines la función flecha como el segundo argumento y eso es un concepto de JS intermedio/avanzado las 
+funciones flecha que es recomendable repasar si te gustaría usar esto de esta forma es más conciso y lo vas a conseguir muy a menudo, básicamente 
+este es el parámetro→(e), el evento y la funcion flecha nos dice que esta la relación entre los parámetros y el cuerpo de la función que en este 
+caso es console.log() y se obtiene la misma funcionalidad. 
+todosLosToppings.addEventListener(`click`, (e) => { console.log(e.target.innerText) }); Para manejar otros eventos la única deferencia seria 
+personalizar el nombre del evento en vez de click puedes colocar el nombre de otro evento y esa función va a manejar el cuerpo de ese evento 
+y en el cuerpo de la función decides cómo manejarlo, vamos a aplicar todos estos conceptos al momento de crear nuestros proyectos.                                        
+*/  
+/*const albahaca = document.getElementById(`albahaca`); solo accedemos al topping albahaca
+albahaca.addEventListener(`click`, mostrarClick);*/ 
+const todosLosToppings = document.getElementsByClassName(`toppings`)/*accedemos a todos los toppings*/
 
+/*function mostrarClick(e) {
+  console.log(e.target.innerText);   
+}
+for(const todosLosToppings of toppings){
+  todosLosToppings.addEventListener(`click`, mostrarClick);
+  /*console.log(todosLosToppings);
+}
+La funcion flecha remplaza la funcion como tal 
+*/
+for(const todosLosToppings of toppings) {
+  todosLosToppings.addEventListener(`click`, (e) => { 
+  console.log(e.target.innerText) });
+}
+
+/*
+Proyecto Colores Aleatorios:
+
+*/                        
+  
+                         
+                                        
