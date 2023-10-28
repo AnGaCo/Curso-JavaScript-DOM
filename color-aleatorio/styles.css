@@ -18,3 +18,35 @@ text-align: center;
 }
 
 /* Estilos para el contenedor */
+#contenedor {
+  height: 220px; /*alto*/
+  width: 450px; /*ancho*/
+  background-color: white;
+  border: 5px solid black;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/* Estilos para el texto */
+#color {
+  font-size: 70px; /* tamaño */
+  font-weight: bold; /* negrita */
+}
+
+/* Estilo para el Botón */
+button {
+  font-size: 30px;
+  color: white;
+  border-radius: 20px; /*bores redondeados*/
+  background-color: #008CBA;/*color de fondo*/
+  margin: 15px;
+  padding: 10px 30px;
+  border: 3px solid #008CBA;/*color del borde*/
+  user-select: none; /*el usuario no pueda seleccionar el texto que está dentro del botón */
+  cursor: pointer; /*El cursor sobre el boton se vuelve una manito */
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #05455A; /*transición sutil de color del fondo del boton de 0.4 segundos */  
+}
