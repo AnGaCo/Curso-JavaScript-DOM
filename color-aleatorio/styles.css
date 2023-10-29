@@ -1,4 +1,41 @@
-/* Estilos Generales */
+/*
+Ahora vamos a trabajar con styls.css para asignar los estilos, iniciamos con los estilos generales: Con el selector universal→el asterisco 
+reiniciamos el margin y el padding  en cero y vamos asignar por defecto el tipo de letra verdana y de respaldo sans-serif ahora para el body 
+vamos asignar una altura→height del cien por cien→vh Nota al pie: vh significa viewport height (altura del dispositivo). También funciona 
+como porcentaje, especificar 10vh es equivalente a ocupar 10% de la altura visible de la pantalla o 50vh significa 50%, lo que cubrirá el 
+50% de la altura de la pantalla. El color de fondo→background-color va a ser el código hexadecimal #2B807B que va a ser consistente con el 
+prestablecido en el botón en html, seguidamente  vamos alinear el texto ubicado en el body en el centro→text-align: center; Recuerda que en 
+html tenemos una clase→.centrar-flex en esa clase vamos a definir que el elemento va a ser flex→Nota al pie: La propiedad de display flex, ayuda 
+a colocar las cajas como si fueran celdas de tablas, con un comportamiento predecible y adaptable, flex soluciona problemas de control del 
+diseño y se adapta fácilmente a los diferentes dispositivos. Y va a tener un justify-content: center; Nota al pie: La propiedad CSS 
+justify-content define cómo el navegador distribuye el espacio entre y alrededor de los elementos de contenido a lo largo del eje principal 
+de un contenedor flexible y el eje en línea de un contenedor de cuadrícula.
+Luego va a tener un align-items center; Nota al pie: centra los elementos hijo de un contendor (las cajas :d) y text-align centra el 
+contenido que está dentro de la cajas en concreto el texto, esta propiedad se declara dentro del elemento padre y todos los elementos hijos 
+lo heredan. Ahora vamos a definir los estilos para el #contenedor, este es el contenedor blanco que va a contener el código del color y el 
+botón. Primero vamos asignarle una altura→height: de 220 px, su ancho→width va hacer de 450 px, el color de fondo fondo→background-color va 
+a ser blanco, su borde→border va a ser de 5 px sólido y negro. También queremos que los elementos se distribuyan en varias líneas si lo 
+necesitan asique vamos agregar flex-wrap: wrap   Nota al pie:→La propiedad flex-wrap de CSS especifica si los elementos "hijos" son obligados 
+a permanecer en una misma línea o pueden fluir en varias líneas. Si la cobertura (wrap) está permitida, esta propiedad también te permite 
+controlar la dirección en la cual serán apilados los elementos. Y queremos que estén uno debajo del otro verticalmente asique agregamos 
+flex-direction: column Nota al pie:→Flex-direction determina la dirección en que se ordenarán los elementos en el espacio. Esto puede ser 
+de izquierda a derecha (row), de derecha a izquierda (row-reverse), de arriba a abajo (column) o de abajo a arriba (column-reverse) 
+( flex-flow flex-direction ). Ejecutamos la aplicación en VSC y podemos apreciar el cambio, ahora tenemos un contenedor de fondo blanco y 
+los elementos están alineados verticalmente. Ahora vamos a definir un estilo para el texto, ese texto está definido en html en el elemento 
+p por el id="color">#2B807B vamos asignarle un estilo al código. Vamos asignar un tamaño de letra→font-size: 70px; el peso de la letra 
+font-weight: bold negrita, ahora vamos a los estilo del botón, el tamaño de la letra→font-size: 30px; color blanco y bordes redondeados→
+border-right: 20px; y el color de fondo→ background-color: #008CBA; y para el margen margin: 15px; y un padding: 10px 30px; Nota al pie:
+→La propiedad padding es la que crea el espacio o área alrededor del contenido de un elemento. Consiste en el rellenosuperior derecho, 
+inferior izquierdo. Y un borde border: 3px solid y el mismo código hexadecimal #008CBA para el color. Para que el usuario no pueda seleccionar 
+el texto que está dentro del botón usamos la propiedad→user-select: none; también agregamos la propiedad→cursor: pointer; el cursor sobre el 
+botón se vuelve una manito. Por ultimo asignarle un efecto, una transición para cambiar su estilo cuando el cursor este sobre ese botón vamos 
+asignarle una duración de tiempo→ transition-duration: 0.4s; 0.4 segundos y para terminar colocamos el efecto→button:hover cuando el cursor 
+se coloque sobre el botón sin hacer click en el vamos a cambiar el color de fondo a #05455A con esto logramos una transición sutil de 0.4 
+segundos en el que el fondo del botón cambia de color y se mantiene el borde más claro. Con esto ya tenemos todos los estilos principales y 
+la estructura. Ahora podemos comenzar a enfocarnos en la funcionalidad del archivo app.js para crear esa interactividad.
+ 
+Estilos Generales */
+
 * {
   margin: 0;
   padding: 0;
