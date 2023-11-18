@@ -23,22 +23,22 @@ document.body.style.backgroundColor = colorRGB
 
 
 //actualizar el input para el (rojo)
-inputRojo.addEventListener('change', (e) => {
-rojo = e.target.value;
+inputRojo.addEventListener('change', (e) => { // Escucha le evento change→cambio en elmento input rojo
+rojo = e.target.value;//target es el elemento blanco extraer su valor y así podemos asignarle a una variable
 textoRojo.innerText = rojo;
 actualizarColor(rojo, verde, azul);
 });
 
 //actualizar el input para el (verde)
-inputVerde.addEventListener('change', (e) => {
-verde = e.target.value;
+inputVerde.addEventListener('change', (e) => { // Escucha le evento change→cambio en elmento input verde
+verde = e.target.value;//target es el elemento blanco extraer su valor y así podemos asignarle a una variable
 textoVerde.innerText = verde;
 actualizarColor(rojo, verde, azul);
 });
 
 //actualizar el input para el (azul)
-inputAzul.addEventListener('change', (e) => {
-azul = e.target.value;
+inputAzul.addEventListener('change', (e) => { // Escucha le evento change→cambio en elmento input azul 
+azul = e.target.value;//target es el elemento blanco extraer su valor y así podemos asignarle a una variable
 textoAzul.innerText = azul;
 actualizarColor(rojo, verde, azul);
 });
