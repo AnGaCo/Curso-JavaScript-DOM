@@ -15,3 +15,65 @@ body {
   text-align: center;
   background: url(imagenes/Biblioteca.jpg) no-repeat center center/ cover;
 }
+
+.contenido-centrado {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedores */
+.contenedor {
+  width: 80vw;
+  max-width: 600px;
+  min-width: 500px;
+  padding: 10px;
+  background-color: white;
+  border: 5px solid black;
+  border-radius: 30px;
+  }
+  
+.contenedor-interno {
+  width: 80%;
+}
+
+/* Contenido */
+#titulo {
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Courgette', cursive;
+  font-size: 35px; 
+}
+
+#cita {
+  font-size: 32px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+}
+
+#autor {
+  width: 100%;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-family: 'Courgette', cursive;
+}
+
+#boton-cambiar-cita {
+  width: 90px;
+  height: 40px;
+  font-weight: bold;
+  font-size: 11px;
+}
+/*
+width: 180px;
+height: 50px;
+font-size: 20px;
+*/  
