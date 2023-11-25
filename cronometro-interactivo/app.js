@@ -46,3 +46,18 @@ botonInicioPausa.addEventListener('click', function() {
     estadoCronometro = 'pausado';   
   }
 });
+
+botonReiniciar.addEventListener('click', function(){
+  window.clearInterval(intervaloDeTiempo);
+  horas = 0;
+  minutos = 0;
+  segundos = 0;
+  //Reiniciar 
+  cronometro.innerText = '00:00:00';
+  //Actualizar botones 
+  botonInicioPausa.innerHTML = '<i class="bi bi-play-fill"></i>'; 
+  botonInicioPausa.classList.remove('pausar');
+  botonInicioPausa.classList.add('iniciar');
+  //Estado
+  estadoCronometro = 'pausado'; 
+});
