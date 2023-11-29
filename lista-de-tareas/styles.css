@@ -1,0 +1,40 @@
+/* Estilos Generales */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'roboto', sans-serif;
+}
+
+body {
+  min-width: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+  background: url(imagenes/fondo.jpg) no-repeat center center/ cover;
+}
+
+/* Contenedor */
+.contenedor {
+  width: 700px;
+  min-width: 500px;
+  background-color: white;
+  padding: 40px;
+  border: 5px solid black;
+  border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*Titulo*/
+h1 {
+font-size: 80px;
+font-weight: bold;
+}
+
+/*ingresar Texto*/
