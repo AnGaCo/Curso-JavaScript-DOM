@@ -1,26 +1,27 @@
-/* Estilos Generales */
+/* Estilos generales */
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
-  min-width: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  min-height: 100vh;
   padding: 40px 0;
+  text-align: center;
   background: url(imagenes/fondo.jpg) no-repeat center center/ cover;
 }
 
-/* Contenedor */
+/* Contenedor principal */
+
 .contenedor {
   width: 700px;
-  min-width: 500px;
+  min-height: 500px;
   background-color: white;
   padding: 40px;
   border: 5px solid black;
@@ -31,27 +32,15 @@ body {
   align-items: center;
 }
 
-/*.contenedorInterno{
-  width: 80px;
-  min-width: 500px;
-  font-size: 80px;
-  font-weight: bold;
-  padding: 30px;
-  border: 5px solid black;
-  border-radius: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-items: center;
-}
-*/
-/*Titulo*/
+/* Titulo */
+
 h1 {
-  font-size: 5 0px;
+  font-size: 50px;
   font-weight: bold;
 }
 
-/*ingresar Texto al input*/
+/* Ingresar texto */
+
 input {
   width: 80%;
   height: 50px;
@@ -62,7 +51,8 @@ input {
   border-radius: 10px;
 }
 
-/*Boton*/
+/* Boton */
+
 button {
   width: 150px;
   height: 60px;
@@ -71,38 +61,41 @@ button {
   background-color: #1312a8;
   font-size: 22px;
   border-radius: 20px;
-  border: none;
+  border: 0px solid black;
   cursor: pointer;
   user-select: none;
 }
 
-/*Lista de tareas*/
+/* Lista de tareas */
+
 #lista-de-tareas {
-  width: 80px;
+  width: 80%;
   margin-top: 20px;
 }
 
-/*Tareas individuales*/
+/* Tareas individuales */
+
 .tarea {
   width: 100%;
   min-height: 70px;
   font-size: 25px;
   padding: 10px;
-  margin-top: 10;
+  margin-top: 10px;
   color: white;
   background-color: #407ba6;
-  border: 2px solid;
+  border: 2px solid black;
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  text-align: center;
+  text-align: left;
 }
 
-/*Tarea Comletada*/
+/* Estilo para tarea completada */
+
 .tarea.completada {
   text-decoration: line-through;
-  background: black;
+  background-color: black;
   border: none;
 }
 
@@ -110,10 +103,11 @@ button {
   max-width: 350px;
 }
 
-/*Iconos*/
+/* Iconos */
+
 i {
   margin: 5px;
-  padding: 10;
+  padding: 10px;
   cursor: pointer;
 }
 
@@ -127,5 +121,5 @@ i {
 
 .icono-completar:hover,
 .icono-eliminar:hover {
-  background: rgb(255, 255, 255, 0.523);
+  background-color: rgba(255, 255, 255, 0.523);
 }
