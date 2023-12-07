@@ -22,7 +22,7 @@ function agregarTarea() {
     let texto = document.createElement('p');
     texto.innerText = input.value;
     tareaNueva.appendChild(texto);
-  
+        
     // Crear y agregar contenedor de los iconos
     let iconos = document.createElement('div');
     iconos.classList.add('iconos'); 
@@ -57,3 +57,4 @@ function eliminarTarea(e) {
   let tarea = e.target.parentNode.parentNode;
   tarea.remove();
 }
+
